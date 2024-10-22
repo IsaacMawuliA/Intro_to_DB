@@ -1,4 +1,7 @@
 import mysql.connector
+from mysql.connector import Error
+except mysql.connector.Error as e:
+print(f"Error while connecting to MySQL:{e}")
 
 def create_database():
     try:
