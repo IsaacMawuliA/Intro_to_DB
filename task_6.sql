@@ -1,10 +1,10 @@
-USE alx_book_store;
-
-INSERT INTO customer (customer_id, customer_name, email, address) VALUES
+INSERT INTO customer (customer_id, customer_name, email, address) 
+VALUES 
 (2, 'Blessing Malik', 'bmalik@sandtech.com', '124 Happiness Ave.'),
 (3, 'Obed Ehoneah', 'eobed@sandtech.com', '125 Happiness Ave.'),
 (4, 'Nehemial Kamolu', 'nkamolu@sandtech.com', '126 Happiness Ave.')
+AS new_values
 ON DUPLICATE KEY UPDATE
-customer_name = VALUES(customer_name),
-email = VALUES(email),
-address = VALUES(address);
+customer_name = new_values.customer_name,
+email = new_values.email,
+address = new_values.address;
